@@ -9,16 +9,26 @@ body, html {
 }
 
 /* Background Video */
-/* Background Video Styling */
-/* Ensure the video covers the full background */
 #video-background {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    top: 50%;
+    left: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: -1;
+}
+
+/* Ensure the page takes up full screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling */
 }
 /* Content Box */
 .content {
