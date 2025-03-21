@@ -10,19 +10,16 @@ body, html {
 
 /* Background Video */
 /* Background Video Styling */
+/* Ensure the video covers the full background */
 #video-background {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100vw;
-    min-height: 100vh;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     z-index: -1;
 }
-
 /* Content Box */
 .content {
     position: absolute;
