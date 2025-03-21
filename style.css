@@ -185,3 +185,8 @@ body {
   50% { left: 0; }
   100% { left: 100%; }
 }
+/* ===== Parallax Scrolling ===== */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
