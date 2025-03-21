@@ -29,3 +29,21 @@ sections.forEach(section => {
   section.style.transform = 'translateY(20px)';
   observer.observe(section);
 });
+// Page Transition Logic
+function navigate(url) {
+  const transition = document.createElement('div');
+  transition.className = 'page-transition';
+  document.body.appendChild(transition);
+  
+  setTimeout(() => {
+    window.location.href = url;
+  }, 800);
+}
+
+// Add event listeners to all navigation links
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigate(e.target.href);
+  });
+});
