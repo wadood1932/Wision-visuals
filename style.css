@@ -1,98 +1,106 @@
-/* Global styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    color: white;
-    text-align: center;
-    background-color: black;
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* Video Background */
-.video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
+/* Background Video */
 #bg-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-/* Content */
+/* Content Styling */
 .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-}
-
-h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: gold;
-}
-
-p {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-/* Button */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: black;
-    background-color: gold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background-color: white;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Navigation */
-nav {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-nav ul li {
-    display: inline;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-nav ul li a {
-    color: gold;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: 0.3s ease;
+nav a:hover {
+  color: #ff6f61;
 }
 
-nav ul li a:hover {
-    color: white;
+/* Sections */
+.section {
+  padding: 100px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h1, h2 {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #ff6f61;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff3b2f;
 }
