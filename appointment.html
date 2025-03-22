@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appointment | WISION Visuals</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+    }
+
+    .appointment-section {
+      max-width: 800px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid #c5a03033;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(197, 160, 48, 0.1);
+      animation: fadeUp 1s ease-out;
+    }
+
+    .appointment-section h1 {
+      text-align: center;
+      color: #C5A030;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #e6e6e6;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #C5A030;
+      box-shadow: 0 0 8px #C5A030;
+      outline: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: #C5A030;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #fff0c2;
+      color: #000;
+    }
+
+    #success-message {
+      display: none;
+      text-align: center;
+      color: #C5A030;
+      margin-top: 1.5rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cinematic Preloader -->
+<div id="wision-preloader">
+  <div class="gold-ring"></div>
+  <div class="preloader-text">
+    <span>W</span><span>I</span><span>S</span><span>I</span><span>O</span><span>N</span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="main-nav">
+  <div class="nav-brand">
+    <img src="logo.png" alt="WISION Logo" class="logo"/>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="services.html"><i class="fas fa-film"></i> Services</a></li>
+    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    <li><a href="appointment.html" class="active"><i class="fas fa-calendar-alt"></i> Book</a></li>
+  </ul>
+</nav>
+
+<!-- Booking Form -->
+<section class="appointment-section">
+  <h1>Book a Cinematic Consultation</h1>
+  <form id="appointment-form">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="service">Type of Service</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option value="wedding">Wedding</option>
+        <option value="commercial">Commercial</option>
+        <option value="shortfilm">Short Film</option>
+        <option value="social">Social Media</option>
+        <option value="car">Car Video</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" rows="5"></textarea>
+    </div>
+
+    <button type="submit" class="cta-button">Send Request</button>
+    <div id="success-message">Thank you! Your request has been prepared. Please send the email that opens next.</div>
+  </form>
+</section>
+
+<script>
+  document.getElementById("appointment-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = encodeURIComponent(document.getElementById("name").value);
+    const email = encodeURIComponent(document.getElementById("email").value);
+    const service = encodeURIComponent(document.getElementById("service").value);
+    const date = encodeURIComponent(document.getElementById("date").value);
+    const message = encodeURIComponent(document.getElementById("message").value);
+
+    const mailtoLink = `mailto:your@email.com?subject=Cinematic Booking Request&body=
+Name: ${name}%0D%0AEmail: ${email}%0D%0AService: ${service}%0D%0APreferred Date: ${date}%0D%0AMessage: ${message}`;
+
+    window.location.href = mailtoLink;
+
+    document.getElementById("success-message").style.display = "block";
+    this.reset();
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
