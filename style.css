@@ -334,3 +334,13 @@ body {
 .form-row .form-group {
   flex: 1;
 }
+/* ===== Navigation Icons ===== */
+.nav-links a i {
+  margin-right: 8px;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover i {
+  color: var(--gold);
+}
