@@ -14,7 +14,7 @@
     <div class="preloader-text" data-text="WISION">WISION</div>
   </div>
 
-  <!-- Main Navigation -->
+  <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-brand">
       <img src="assets/logo.png" alt="WISION Logo" class="logo">
@@ -29,16 +29,51 @@
 
   <!-- Contact Section -->
   <section class="contact-section">
-    <h2 class="gold-gradient">Get in Touch</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+    <div class="contact-overlay"></div>
+    
+    <!-- Form Container -->
+    <div class="form-container">
+      <h2 class="gold-gradient">Book a Consultation</h2>
+      
+      <!-- Appointment Form -->
+      <form id="appointment-form" class="cinematic-form">
+        <!-- Name -->
+        <div class="form-group">
+          <input type="text" id="name" required>
+          <label for="name">Your Name</label>
+          <div class="form-line"></div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <input type="email" id="email" required>
+          <label for="email">Your Email</label>
+          <div class="form-line"></div>
+        </div>
+
+        <!-- Date & Time -->
+        <div class="form-row">
+          <div class="form-group">
+            <input type="date" id="date" required>
+            <label for="date">Preferred Date</label>
+            <div class="form-line"></div>
+          </div>
+          <div class="form-group">
+            <input type="time" id="time" required>
+            <label for="time">Preferred Time</label>
+            <div class="form-line"></div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="glow-button">
+          <span>Schedule Now</span>
+          <div class="glow"></div>
+        </button>
+      </form>
+    </div>
   </section>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
   <script src="loader.js"></script>
 </body>
