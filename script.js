@@ -68,3 +68,24 @@ document.addEventListener('scroll', () => {
 window.addEventListener('scroll', () => {
   requestAnimationFrame(() => {});
 });
+// Form Input Animations
+document.querySelectorAll('.form-group input').forEach(input => {
+  input.addEventListener('focus', () => {
+    input.parentElement.classList.add('active');
+  });
+
+  input.addEventListener('blur', () => {
+    if (!input.value) {
+      input.parentElement.classList.remove('active');
+    }
+  });
+});
+
+// Form Submission
+document.getElementById('appointment-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Add your email service integration here (I'll guide you later)
+  alert('Appointment request sent! We’ll contact you shortly.');
+  e.target.reset();
+});
