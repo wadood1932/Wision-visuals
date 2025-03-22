@@ -107,19 +107,17 @@ setTimeout(() => {
   if(preloader) preloader.remove();
 }, 4000);
 // Scroll Animations
-// Replace observer config in script.js
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translate(0)";
-        }
-    });
+  entries.forEach(entry => {
+    if(entry.isIntersectionRatio >= 0.1) { // More sensitive trigger
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
 }, {
-    threshold: 0.1, // More sensitive trigger
-    rootMargin: '0px 0px -50px 0px' // Earlier activation
+  threshold: 0.1,
+  rootMargin: '0px 0px -25% 0px' // Earlier trigger
 });
-
 // Enable smooth scroll snap
 document.body.style.scrollSnapType = 'y mandatory';
 document.body.style.overflowY = 'scroll';
