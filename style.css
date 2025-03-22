@@ -927,3 +927,33 @@ body {
     letter-spacing: 2px;
   }
 }
+/* === Page Transition Animation === */
+.page-transition {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #C5A030;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.page-transition.start {
+  animation: goldWipe 1.2s forwards;
+}
+
+@keyframes goldWipe {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
