@@ -1237,3 +1237,55 @@ html {
 .site-footer a:hover {
   color: white;
 }
+/* === Final Footer Fix === */
+
+/* Ensure floating button never covers footer */
+@media (min-width: 768px) {
+  .floating-contact {
+    bottom: 100px; /* Push it further up */
+  }
+}
+
+/* Re-contain footer layout */
+.site-footer {
+  background-color: #0a0a0a !important;
+  color: #c5a030 !important;
+  font-family: 'Cinzel', serif !important;
+  padding: 4rem 1rem !important;
+  text-align: center;
+  z-index: 2 !important;
+  position: relative !important;
+  width: 100%;
+  overflow-x: hidden;
+  clear: both;
+}
+
+/* Restore link styles cleanly */
+.site-footer a,
+.site-footer p,
+.site-footer i {
+  color: #c5a030 !important;
+  font-family: 'Cinzel', serif !important;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.site-footer a:hover {
+  color: white !important;
+}
+
+/* Extra safety: wrap layout in stacked format on iPad+ */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-logo,
+  .footer-links,
+  .footer-social,
+  .footer-credit {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
