@@ -1134,3 +1134,8 @@ html {
   40% { transform: translateY(-20px); }
   60% { transform: translateY(-10px); }
 }
+/* Force containment and stop horizontal scroll */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
