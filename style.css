@@ -1314,3 +1314,58 @@ body {
   font-size: 0.9rem;
   color: #aaaaaa;
 }
+/* === Responsive Footer Patch === */
+@media (min-width: 768px) {
+  .site-footer {
+    background: #0a0a0a !important;
+    color: #c5a030;
+    padding: 4rem 2rem;
+    font-family: 'Cinzel', serif;
+    position: relative;
+    z-index: 10;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-logo img {
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+  }
+
+  .footer-links a {
+    font-size: 1rem;
+    color: #c5a030;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .footer-social a {
+    font-size: 1.5rem;
+    color: #c5a030;
+  }
+
+  .footer-credit {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 2rem;
+  }
+}
