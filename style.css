@@ -17,7 +17,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: -1;
     overflow: hidden;
@@ -852,7 +852,7 @@ body {
 #wision-preloader {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100vh;
+  width: 100vw; height: 100vh;
   background: black;
   display: flex;
   align-items: center;
@@ -1025,124 +1025,24 @@ body {
   transform: translate(0, 0) !important;
 }
 /* === Clean Footer Styles === */
-.site-footer {
-  background: #0a0a0a;
-  color: #c5a030;
-  padding: 3rem 1rem;
-  font-family: 'Cinzel', serif;
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  overflow: hidden;
-}
 
-.footer-container {
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
 
-.footer-logo img {
-  height: 60px;
-}
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
 
-.footer-links a {
-  color: #c5a030;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
-.footer-links a:hover {
-  color: #ffffff;
-}
 
-.footer-social {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
 
-.footer-social a {
-  font-size: 1.4rem;
-  color: #c5a030;
-  transition: color 0.3s ease;
-}
 
-.footer-social a:hover {
-  color: #ffffff;
-}
 
-.footer-credit {
-  font-size: 0.9rem;
-  color: #aaaaaa;
-}
-.site-footer {
-  position: relative;
-  z-index: 1;
-  clear: both;
-  width: 100%;
-}
 html, body {
   background: #0a0a0a;
 }
  
-.site-footer a:hover {
-  color: white;
-}
-.site-footer {
-  background-color: #0a0a0a !important;
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  padding: 4rem 1rem !important;
-  text-align: center;
-  z-index: 2;
-  position: relative;
-}
 
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030 !important;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: 'Cinzel', serif !important;
-}
 
-.site-footer a:hover {
-  color: white !important;
-}
 
-.footer-logo img {
-  height: 60px;
-  margin-bottom: 1rem;
-}
 
-.footer-links,
-.footer-social {
-  margin: 1.5rem 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
 
-.footer-credit {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #aaaaaa !important;
-}
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -1153,90 +1053,18 @@ html {
   box-sizing: inherit;
 }
 /* === FIXED FOOTER STYLES === */
-.site-footer {
-  background-color: #0a0a0a !important;
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  padding: 4rem 1rem !important;
-  text-align: center;
-  z-index: 2;
-  position: relative;
-  width: 100%;
-  overflow-x: hidden;
-}
 
-.footer-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  text-align: center;
-}
 
-.footer-logo img {
-  height: 60px;
-  margin-bottom: 1rem;
-}
 
-.footer-links,
-.footer-social {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
 
-.footer-credit {
-  font-size: 0.85rem;
-  color: #aaaaaa !important;
-  margin-top: 2rem;
-}
 
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  text-decoration: none;
-  font-size: 1rem;
-}
 
-.site-footer a:hover {
-  color: white !important;
-}
 
 /* iPad + Laptop Fix: layout containment */
 @media (min-width: 768px) and (max-width: 1280px) {
-  .footer-container {
-    flex-wrap: wrap;
-  }
 
-  .footer-logo,
-  .footer-links,
-  .footer-social,
-  .footer-credit {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-}
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030;
-  font-family: 'Cinzel', serif;
-  text-decoration: none;
-  font-size: 1rem;
 }
 
-.site-footer a:hover {
-  color: white;
-}
 /* === Final Footer Fix === */
 
 /* Ensure floating button never covers footer */
@@ -1247,51 +1075,11 @@ html {
 }
 
 /* Re-contain footer layout */
-.site-footer {
-  background-color: #0a0a0a !important;
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  padding: 4rem 1rem !important;
-  text-align: center;
-  z-index: 2 !important;
-  position: relative !important;
-  width: 100%;
-  overflow-x: hidden;
-  clear: both;
-}
 
 /* Restore link styles cleanly */
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  text-decoration: none;
-  font-size: 1rem;
-}
 
-.site-footer a:hover {
-  color: white !important;
-}
 
 /* Extra safety: wrap layout in stacked format on iPad+ */
 @media (min-width: 768px) and (max-width: 1280px) {
-  .footer-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
-  .footer-logo,
-  .footer-links,
-  .footer-social,
-  .footer-credit {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-}
-
-
-/* === GLOBAL FIX: Prevent horizontal scrolling === */
-html, body {
-  overflow-x: hidden !important;
 }
