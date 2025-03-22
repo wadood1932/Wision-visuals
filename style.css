@@ -190,3 +190,25 @@ body {
   transform: translateZ(0);
   will-change: transform;
 }
+/* ===== 3D Parallax Effect ===== */
+.parallax-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  perspective: 1000px;
+  overflow: hidden;
+  pointer-events: none; /* Prevents interaction with layers */
+  z-index: -1; /* Ensures content stays on top */
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(200, 160, 48, 0.1) 20%, /* Dimmed gold */
+    transparent 80%
+  );
+  transform-style: preserve-3d;
+}
