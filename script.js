@@ -29,17 +29,36 @@ sections.forEach(section => {
   section.style.transform = 'translateY(20px)';
   observer.observe(section);
 });
-// Page Transition Logic
-function navigate(url) {
-    const transition = document.createElement('div');
-    transition.className = 'page-transition';
-    document.body.appendChild(transition);
-    
-    setTimeout(() => {
-        window.location.href = url;
-    }, 800); // Matches animation duration
+// PAGE TRANSITION SYSTEM
+let isTransitioning = false;
+
+function createTransition() {
+  const transition = document.createElement('div');
+  transition.className = 'page-transition';
+  document.body.appendChild(transition);
+  return transition;
 }
 
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    if (isTransitioning || this.href === window.location.href) return;
+    
+    e.preventDefault();
+    isTransitioning = true;
+    
+    const transition = createTransition();
+    
+    transition.addEventListener('animationend', () => {
+      window.location.href = e.target.href;
+    }, { once: true });
+
+    setTimeout(() => {
+      if (!transition.parentNode) return;
+      transition.remove();
+      isTransitioning = false;
+    }, 1500);
+  });
+});
 // Attach to all navigation links
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
