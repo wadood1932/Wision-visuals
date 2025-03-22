@@ -555,3 +555,14 @@ body {
         padding: 0 1rem;
     }
 }
+/* Ensure sections are visible */  
+.about-section, .creator-section {  
+  opacity: 1 !important;  
+  transform: none !important;  
+}  
+
+/* Fix vision section positioning */  
+.vision-section {  
+  position: relative;  
+  z-index: 2;  
+}
