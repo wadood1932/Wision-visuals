@@ -6,6 +6,17 @@
   <title>Services | WISION Visuals</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+    .active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
   <!-- Preloader -->
@@ -37,10 +48,8 @@
     </div>
   </section>
 
-  <!-- Services Content -->
+  <!-- Services Section -->
   <section class="content-section" style="background:#0a0a0a; padding: 5rem 2rem;">
-    
-    <!-- Service: Weddings -->
     <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
       <div class="creator-photo">
         <img src="wedding.jpg" alt="Weddings">
@@ -52,7 +61,6 @@
       </div>
     </div>
 
-    <!-- Service: Commercials -->
     <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
       <div class="creator-photo" style="order:1;">
         <img src="commercial.jpg" alt="Commercials">
@@ -64,7 +72,6 @@
       </div>
     </div>
 
-    <!-- Service: Short Films -->
     <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
       <div class="creator-photo">
         <img src="shortfilm.jpg" alt="Short Films">
@@ -76,7 +83,6 @@
       </div>
     </div>
 
-    <!-- Service: Social Media -->
     <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
       <div class="creator-photo" style="order:1;">
         <img src="socialmedia.jpg" alt="Social Media Content">
@@ -88,7 +94,6 @@
       </div>
     </div>
 
-    <!-- Service: Car Videos -->
     <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
       <div class="creator-photo">
         <img src="car.jpg" alt="Car Videos">
@@ -101,7 +106,25 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
-  <script src="loader.js"></script>
+  <!-- Inline Script (no external file needed) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
 </body>
 </html>
