@@ -85,17 +85,18 @@ document.getElementById('appointment-form').addEventListener('submit', (e) => {
   alert('Appointment request sent! We’ll contact you shortly.');
   e.target.reset();
 });
-// Preloader Logic
-document.body.style.overflow = 'hidden';
-
-window.onload = () => {
-  const preloader = document.querySelector('.preloader');
+// Simple Preloader Logic
+window.addEventListener('load', function() {
+  const preloader = document.querySelector('.preloader-overlay');
   
+  // Start fade out after 2 seconds
   setTimeout(() => {
     preloader.style.opacity = '0';
+    
+    // Remove after fade completes
     setTimeout(() => {
       preloader.remove();
-      document.body.style.overflow = 'auto';
     }, 1000);
+    
   }, 2000);
-};
+});
