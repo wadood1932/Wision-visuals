@@ -57,7 +57,6 @@ body {
     filter: drop-shadow(0 0 10px var(--gold));
 }
 
-./* ===== Navigation Menu Fix ===== */
 .nav-links {
   display: flex;
   gap: 1.5rem; /* Adjust spacing between items */
