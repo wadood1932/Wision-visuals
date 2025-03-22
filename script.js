@@ -76,4 +76,4 @@ if (form) {
 document.body.style.scrollSnapType = 'y mandatory';
 document.body.style.overflowY = 'scroll';
 document.body.style.height = '100vh';
-mailto: wsfilm.de@gmail.com
+mailto:wsfilm.de@gmail.com
