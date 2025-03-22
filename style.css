@@ -643,3 +643,129 @@ body {
   30% { transform: translateX(0); }
   100% { transform: translateX(100%); }
 }
+/* Portfolio Page Styles */
+.portfolio-hero {
+    position: relative;
+    background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)),
+                url('assets/portfolio-bg.jpg') center/cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+    transition: transform 0.3s ease;
+}
+
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,10,10,0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: var(--gold);
+    opacity: 0.8;
+}
+
+.portfolio-cta {
+    background: linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)),
+                url('assets/cta-bg.jpg') center/cover;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Modal Styles */
+.project-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,10,10,0.95);
+    z-index: 9999;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #0a0a0a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--gold);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+    
+    .project-card {
+        aspect-ratio: 16/9;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+}
