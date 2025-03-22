@@ -107,16 +107,22 @@ setTimeout(() => {
   if(preloader) preloader.remove();
 }, 4000);
 // Scroll Animations
-document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.scroll-animate').forEach((element) => {
-        observer.observe(element);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
     });
+}, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
 });
+
+document.querySelectorAll('.fade-left, .fade-right, .fade-up').forEach((element) => {
+    observer.observe(element);
+});
+
+// Enable smooth scroll snap
+document.body.style.scrollSnapType = 'y mandatory';
+document.body.style.overflowY = 'scroll';
+document.body.style.height = '100vh';
