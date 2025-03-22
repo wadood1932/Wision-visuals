@@ -1335,3 +1335,172 @@ body::after {
     background: #0a0a0a;
   }
 }
+/* 6D Spatial Projection */
+:root {
+  --depth-x: 0px;
+  --depth-y: 0px;
+  --space-curve: 0deg;
+}
+
+.parallax-layer {
+  transform: 
+    translate3d(var(--depth-x), var(--depth-y), 0)
+    rotate3d(1, 0.5, 0, var(--space-curve));
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hologram-effect {
+  position: absolute;
+  inset: -5px;
+  background: linear-gradient(45deg,
+    transparent 25%,
+    rgba(197, 160, 48, 0.3) 50%,
+    transparent 75%
+  );
+  animation: quantumInterference 4s infinite linear;
+  mix-blend-mode: soft-light;
+}
+
+@keyframes quantumInterference {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+  /* 4th Dimension Navigation */
+.nav-links a {
+  position: relative;
+  padding: 0.8rem 1.4rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(197, 160, 48, 0.15) 50%,
+    transparent 100%
+  );
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+  transform: translateZ(15px);
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #C5A030;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover::after {
+  left: 0;
+  width: 100%;
+}
+  /* Quantum Material Design */
+.cta-button {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(197, 160, 48, 0.9),
+    rgba(197, 160, 48, 0.6)
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 48, 0.4);
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(
+    45deg,
+    #c5a030 0%,
+    transparent 50%,
+    #c5a030 100%
+  );
+  opacity: 0.4;
+  z-index: -1;
+  animation: quantumFlow 4s linear infinite;
+}
+
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cta-button:hover {
+  transform: translateZ(20px);
+  box-shadow: 0 0 40px rgba(197, 160, 48, 0.4);
+}
+
+.cta-button:hover::after {
+  opacity: 1;
+}
+
+@keyframes quantumFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+  /* Einstein-Rosen Bridges */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  z-index: 9999;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  animation: spacetimeWarp 1.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+@keyframes spacetimeWarp {
+  0% { 
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    background: #0a0a0a;
+  }
+  40% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background: #c5a030;
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background: #0a0a0a;
+  }
+}
+  /* Add to style.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+  
