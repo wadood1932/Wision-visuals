@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Appointment | WISION Visuals</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Appointment | WISION Visuals
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
   <style>
-    body {
+   body {
       background: #0a0a0a;
       color: #fff;
       font-family: 'Cinzel', serif;
@@ -95,74 +97,141 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
-</head>
-<body>
-
-<!-- Cinematic Preloader -->
-<div id="wision-preloader">
-  <div class="gold-ring"></div>
-  <div class="preloader-text">
-    <span>W</span><span>I</span><span>S</span><span>I</span><span>O</span><span>N</span>
+ </head>
+ <body>
+  <!-- Cinematic Preloader -->
+  <div id="wision-preloader">
+   <div class="gold-ring">
+   </div>
+   <div class="preloader-text">
+    <span>
+     W
+    </span>
+    <span>
+     I
+    </span>
+    <span>
+     S
+    </span>
+    <span>
+     I
+    </span>
+    <span>
+     O
+    </span>
+    <span>
+     N
+    </span>
+   </div>
   </div>
-</div>
-
-<!-- Navigation -->
-<nav class="main-nav">
-  <div class="nav-brand">
-    <img src="logo.png" alt="WISION Logo" class="logo"/>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="services.html"><i class="fas fa-film"></i> Services</a></li>
-    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-    <li><a href="appointment.html" class="active"><i class="fas fa-calendar-alt"></i> Book</a></li>
-  </ul>
-</nav>
-
-<!-- Booking Form -->
-<section class="appointment-section">
-  <h1>Book a Cinematic Consultation</h1>
-  <form id="appointment-form">
+  <!-- Navigation -->
+  <nav class="main-nav">
+   <div class="nav-brand">
+    <img alt="WISION Logo" class="logo" src="logo.png"/>
+   </div>
+   <ul class="nav-links">
+    <li>
+     <a href="index.html">
+      <i class="fas fa-home">
+      </i>
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="services.html">
+      <i class="fas fa-film">
+      </i>
+      Services
+     </a>
+    </li>
+    <li>
+     <a href="about.html">
+      <i class="fas fa-user">
+      </i>
+      About
+     </a>
+    </li>
+    <li>
+     <a href="contact.html">
+      <i class="fas fa-envelope">
+      </i>
+      Contact
+     </a>
+    </li>
+    <li>
+     <a class="active" href="appointment.html">
+      <i class="fas fa-calendar-alt">
+      </i>
+      Book
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <!-- Booking Form -->
+  <section class="appointment-section">
+   <h1>
+    Book a Cinematic Consultation
+   </h1>
+   <form id="appointment-form">
     <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required />
+     <label for="name">
+      Full Name
+     </label>
+     <input id="name" name="name" required="" type="text"/>
     </div>
-
     <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
+     <label for="email">
+      Email Address
+     </label>
+     <input id="email" name="email" required="" type="email"/>
     </div>
-
     <div class="form-group">
-      <label for="service">Type of Service</label>
-      <select id="service" name="service" required>
-        <option value="">Select a service</option>
-        <option value="wedding">Wedding</option>
-        <option value="commercial">Commercial</option>
-        <option value="shortfilm">Short Film</option>
-        <option value="social">Social Media</option>
-        <option value="car">Car Video</option>
-      </select>
+     <label for="service">
+      Type of Service
+     </label>
+     <select id="service" name="service" required="">
+      <option value="">
+       Select a service
+      </option>
+      <option value="wedding">
+       Wedding
+      </option>
+      <option value="commercial">
+       Commercial
+      </option>
+      <option value="shortfilm">
+       Short Film
+      </option>
+      <option value="social">
+       Social Media
+      </option>
+      <option value="car">
+       Car Video
+      </option>
+     </select>
     </div>
-
     <div class="form-group">
-      <label for="date">Preferred Date</label>
-      <input type="date" id="date" name="date" />
+     <label for="date">
+      Preferred Date
+     </label>
+     <input id="date" name="date" type="date"/>
     </div>
-
     <div class="form-group">
-      <label for="message">Additional Message</label>
-      <textarea id="message" name="message" rows="5"></textarea>
+     <label for="message">
+      Additional Message
+     </label>
+     <textarea id="message" name="message" rows="5"></textarea>
     </div>
-
-    <button type="submit" class="cta-button">Send Request</button>
-    <div id="success-message">Thank you! Your request has been prepared. Please send the email that opens next.</div>
-  </form>
-</section>
-
-<script>
-  document.getElementById("appointment-form").addEventListener("submit", function(e) {
+    <button class="cta-button" type="submit">
+     Send Request
+    </button>
+    <div id="success-message">
+     Thank you! Your request has been prepared. Please send the email that opens next.
+    </div>
+   </form>
+  </section>
+  <script>
+   document.getElementById("appointment-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const name = encodeURIComponent(document.getElementById("name").value);
@@ -179,31 +248,49 @@ Name: ${name}%0D%0AEmail: ${email}%0D%0AService: ${service}%0D%0APreferred Date:
     document.getElementById("success-message").style.display = "block";
     this.reset();
   });
-</script>
-
-
+  </script>
   <!-- === Footer Section === -->
-<footer class="site-footer">
-  <div class="footer-container">
+  <footer class="site-footer">
+   <div class="footer-container">
     <div class="footer-logo">
-      <img src="assets/logo.png" alt="WISION Logo"/>
+     <img alt="WISION Logo" src="assets/logo.png"/>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="appointment.html">Book</a>
+     <a href="index.html">
+      Home
+     </a>
+     <a href="services.html">
+      Services
+     </a>
+     <a href="about.html">
+      About
+     </a>
+     <a href="appointment.html">
+      Book
+     </a>
     </div>
     <div class="footer-social">
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+     <a href="https://instagram.com" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a href="https://youtube.com" target="_blank">
+      <i class="fab fa-youtube">
+      </i>
+     </a>
+     <a href="mailto:your@email.com">
+      <i class="fas fa-envelope">
+      </i>
+     </a>
     </div>
     <div class="footer-credit">
-      <p>&copy; 2024 WISION Visuals. All rights reserved.</p>
+     <p>
+      © 2024 WISION Visuals. All rights reserved.
+     </p>
     </div>
-  </div>
-</footer>
-  <script src="script.js"></script>
-</body>
+   </div>
+  </footer>
+  <script src="script.js">
+  </script>
+ </body>
 </html>
