@@ -47,12 +47,7 @@ document.querySelectorAll('nav a').forEach(link => {
     navigate(e.target.href);
   });
 });
-// Parallax Effect
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  document.querySelector('.parallax').style.transform = 
-    `translate3d(0, ${scrolled * 0.4}px, 0)`;
-});
+
 // 3D Parallax Motion
 document.addEventListener('scroll', () => {
   const layers = document.querySelectorAll('.parallax-layer');
