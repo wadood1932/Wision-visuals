@@ -218,3 +218,23 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 });
+// Simple, reliable scroll animation system
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
+});
