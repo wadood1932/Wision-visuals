@@ -324,3 +324,74 @@ new CineEngine();
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+
+class CineRenderer {
+  constructor() {
+    this.initQuantumScene();
+    this.loadHolographicAssets();
+  }
+
+  initQuantumScene() {
+    this.scene = new THREE.Scene();
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    document.querySelector('.parallax-container').appendChild(this.renderer.domElement);
+
+    // Create quantum field
+    this.geometry = new THREE.IcosahedronGeometry(15, 5);
+    this.material = new THREE.MeshPhysicalMaterial({
+      color: 0xC5A030,
+      metalness: 0.9,
+      roughness: 0.1,
+      transmission: 0.9,
+    });
+    
+    this.tesseract = new THREE.Mesh(this.geometry, this.material);
+    this.scene.add(this.tesseract);
+    
+    this.camera.position.z = 30;
+  }
+
+  animate() {
+    requestAnimationFrame(this.animate.bind(this));
+    this.tesseract.rotation.x += 0.004;
+    this.tesseract.rotation.y += 0.006;
+    this.renderer.render(this.scene, this.camera);
+  }
+}
+
+new CineRenderer().animate();
+import * as tf from '@tensorflow/tfjs';
+
+class VisionAI {
+  constructor() {
+    this.model = null;
+    this.loadModel();
+  }
+
+  async loadModel() {
+    this.model = await tf.loadLayersModel('/models/cine-ai.json');
+    this.analyzeUserBehavior();
+  }
+
+  analyzeUserBehavior() {
+    document.addEventListener('mousemove', throttle((e) => {
+      const inputTensor = tf.tensor2d([
+        [e.clientX/window.innerWidth, e.clientY/window.innerHeight]
+      ]);
+      const prediction = this.model.predict(inputTensor);
+      this.adjustLayout(prediction);
+    }, 100));
+  }
+
+  adjustLayout(prediction) {
+    const [styleWeight, contentWeight] = prediction.dataSync();
+    document.documentElement.style.setProperty('--style-weight', styleWeight);
+    document.documentElement.style.setProperty('--content-weight', contentWeight);
+  }
+}
+
+new VisionAI();
