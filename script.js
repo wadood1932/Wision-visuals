@@ -122,3 +122,20 @@ const observer = new IntersectionObserver((entries) => {
 document.body.style.scrollSnapType = 'y mandatory';
 document.body.style.overflowY = 'scroll';
 document.body.style.height = '100vh';
+// SIMPLE FOOLPROOF ANIMATIONS
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.fade-left, .fade-right, .fade-up');
+  
+  function checkVisibility() {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.9) {
+        section.style.opacity = '1';
+        section.style.transform = 'translate(0)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  checkVisibility(); // Initial check
+});
