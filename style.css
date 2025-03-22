@@ -847,3 +847,54 @@ body {
     transform: translateY(-100%);
   }
 }
+/* === Cinematic Preloader === */
+#wision-preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10000;
+  animation: fadeOutPreloader 1s ease 3s forwards;
+}
+
+.gold-ring {
+  width: 120px;
+  height: 120px;
+  border: 5px solid #C5A030;
+  border-radius: 50%;
+  animation: spinRing 2s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+.preloader-text span {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: #C5A030;
+  opacity: 0;
+  animation: fadeInLetter 1s ease forwards;
+}
+
+.preloader-text span:nth-child(1) { animation-delay: 0.2s; }
+.preloader-text span:nth-child(2) { animation-delay: 0.4s; }
+.preloader-text span:nth-child(3) { animation-delay: 0.6s; }
+.preloader-text span:nth-child(4) { animation-delay: 0.8s; }
+.preloader-text span:nth-child(5) { animation-delay: 1s; }
+.preloader-text span:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes spinRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInLetter {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes fadeOutPreloader {
+  to { opacity: 0; visibility: hidden; }
+}
