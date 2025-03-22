@@ -89,15 +89,13 @@ document.getElementById('appointment-form').addEventListener('submit', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('wision-preloader');
   
-  // Force show preloader
-  preloader.style.display = 'flex';
-  
-  window.addEventListener('load', () => {
+  const removePreloader = () => {
+    preloader.style.opacity = '0';
     setTimeout(() => {
-      preloader.style.opacity = '0';
-      setTimeout(() => {
-        preloader.remove();
-      }, 1000);
-    }, 2000);
-  });
+      preloader.style.display = 'none';
+    }, 1000);
+  };
+
+  window.addEventListener('load', removePreloader);
+  setTimeout(removePreloader, 4000); // Safety net
 });
