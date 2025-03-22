@@ -1088,3 +1088,9 @@ body {
   font-size: 0.9rem;
   color: #aaaaaa;
 }
+.site-footer {
+  position: relative;
+  z-index: 1;
+  clear: both;
+  width: 100%;
+}
