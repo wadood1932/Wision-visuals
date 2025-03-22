@@ -1,0 +1,40 @@
+name: Quantum Deployment
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cinematic-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+
+    - name: Install Quantum Dependencies
+      run: |
+        npm install --engine-strict
+        npm install gsap three.js @tensorflow/tfjs
+
+    - name: Build Temporal Assets
+      run: |
+        npm run build
+        npx purgecss --css ./style.css --content ./**/*.html -o ./style.min.css
+        npx terser ./script.js -o ./script.min.js --compress --mangle
+
+    - name: Deploy to Warp Space
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages
+        folder: dist
