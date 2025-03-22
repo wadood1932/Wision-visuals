@@ -653,3 +653,21 @@ body {
     50% { left: 0; }
     100% { left: 100%; }
 }
+/* ===== GOLD PAGE TRANSITIONS ===== */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: #C5A030; /* Gold color directly defined */
+  z-index: 999999; /* Highest possible z-index */
+  animation: pageSlide 1s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+@keyframes pageSlide {
+  0% { transform: translateX(-100%); }
+  30% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
