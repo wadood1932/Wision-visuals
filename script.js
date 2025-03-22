@@ -106,20 +106,17 @@ setTimeout(() => {
   const preloader = document.getElementById('wision-preloader');
   if(preloader) preloader.remove();
 }, 4000);
-// About Page Animations
-const animateElements = document.querySelectorAll('.scroll-animate');
+// Scroll Animations
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
+    document.querySelectorAll('.scroll-animate').forEach((element) => {
+        observer.observe(element);
     });
-}, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -100px 0px'
-});
-
-animateElements.forEach(element => {
-    observer.observe(element);
 });
