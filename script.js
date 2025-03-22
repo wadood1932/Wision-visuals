@@ -31,14 +31,23 @@ sections.forEach(section => {
 });
 // Page Transition Logic
 function navigate(url) {
-  const transition = document.createElement('div');
-  transition.className = 'page-transition';
-  document.body.appendChild(transition);
-  
-  setTimeout(() => {
-    window.location.href = url;
-  }, 800);
+    const transition = document.createElement('div');
+    transition.className = 'page-transition';
+    document.body.appendChild(transition);
+    
+    setTimeout(() => {
+        window.location.href = url;
+    }, 800); // Matches animation duration
 }
+
+// Attach to all navigation links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (link.href === window.location.href) return;
+        e.preventDefault();
+        navigate(link.href);
+    });
+});
 
 // Add event listeners to all navigation links
 document.querySelectorAll('nav a').forEach(link => {
