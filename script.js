@@ -85,18 +85,19 @@ document.getElementById('appointment-form').addEventListener('submit', (e) => {
   alert('Appointment request sent! We’ll contact you shortly.');
   e.target.reset();
 });
-// Simple Preloader Logic
-window.addEventListener('load', function() {
-  const preloader = document.querySelector('.preloader-overlay');
+// PRELOADER SCRIPT
+document.addEventListener('DOMContentLoaded', () => {
+  const preloader = document.getElementById('wision-preloader');
   
-  // Start fade out after 2 seconds
-  setTimeout(() => {
-    preloader.style.opacity = '0';
-    
-    // Remove after fade completes
+  // Force show preloader
+  preloader.style.display = 'flex';
+  
+  window.addEventListener('load', () => {
     setTimeout(() => {
-      preloader.remove();
-    }, 1000);
-    
-  }, 2000);
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.remove();
+      }, 1000);
+    }, 2000);
+  });
 });
