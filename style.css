@@ -126,7 +126,7 @@ body {
     40% { transform: translateY(-30px); }
     60% { transform: translateY(-15px); }
 }
-/* ===== PRELOADER ===== */
+/* ===== CINEMATIC PRELOADER ===== */
 #wision-preloader {
   position: fixed;
   top: 0;
@@ -145,33 +145,32 @@ body {
 .gold-ring {
   width: 200px;
   height: 200px;
-  border: 4px solid transparent;
-  border-top-color: #C5A030;
+  border: 4px solid #C5A030; /* Full golden ring */
   border-radius: 50%;
   position: absolute;
-  animation: spin 2s linear infinite;
-  box-shadow: 0 0 20px rgba(197, 160, 48, 0.3);
+  animation: rotate 2s linear infinite;
+  box-shadow: 0 0 30px rgba(197, 160, 48, 0.7);
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(197, 160, 48, 0.2) 100%
+  );
 }
 
 .text {
   font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #C5A030;
-  position: absolute;
-  animation: spinReverse 3s linear infinite;
+  position: relative;
+  z-index: 1;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 0 0 10px rgba(197, 160, 48, 0.5);
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px rgba(197, 160, 48, 0.5);
 }
 
-@keyframes spin {
+@keyframes rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-@keyframes spinReverse {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); }
 }
 /* ===== Page Transitions ===== */
 .page-transition {
