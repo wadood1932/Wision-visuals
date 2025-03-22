@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | WISION Visuals</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - WISION Visuals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
- <!-- PRELOADER -->
-<div id="wision-preloader">
-  <div class="gold-ring"></div>
-  <div class="text">WISION</div>
-</div>
-
-  <!-- Main Navigation -->
-  <nav class="main-nav">
-    <div class="nav-brand">
-      <img src="assets/logo.png" alt="WISION Logo" class="logo">
+    <!-- Preloader -->
+    <div id="wision-preloader">
+        <div class="gold-ring"></div>
+        <div class="text">WISION</div>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <!-- About Section -->
-  <section class="about-section section">
-    <h2 class="gold-gradient">About Us</h2>
-    <p>At WISION Visuals, we transform dreams into stunning visuals. With a passion for cinematography and storytelling, we create unforgettable experiences that captivate audiences worldwide.</p>
-  </section>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-brand">
+            <img src="assets/logo.png" alt="WISION Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-film"></i> Portfolio</a></li>
+            <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-  <script src="loader.js"></script>
+    <!-- Section 1: Full-screen Intro -->
+    <section class="about-hero full-screen-section">
+        <div class="video-overlay"></div>
+        <div class="hero-content fade-in">
+            <blockquote class="gold-gradient">“Cinematic storytelling is not what we do. It’s what we live.”</blockquote>
+        </div>
+    </section>
+
+    <!-- Section 2: About -->
+    <section class="about-section section">
+        <h2 class="section-title">About Wision Visuals</h2>
+        <div class="content-wrapper">
+            <div class="text-block slide-in-left">
+                <p class="lead">At Wision Visuals, we believe that every story deserves to be told with cinematic beauty, precision, and emotion.</p>
+                <div class="gold-line"></div>
+                <p>Founded by Wadood Alshekh, a passionate filmmaker with experience rooted in Budapest’s Metropolitan Film School, Wision Visuals brings together creativity and technical excellence to craft timeless visual experiences.</p>
+            </div>
+            <div class="text-block slide-in-right">
+                <div class="gold-line"></div>
+                <p>With a strong focus on commercials, event coverage, social media content, and professional editing, Wadood blends classical cinematic style with modern aesthetics—using limited gear but boundless imagination. Every project is approached with dedication and storytelling at its core.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Meet the Creator -->
+    <section class="creator-section section">
+        <div class="creator-card slide-in-left">
+            <div class="creator-image"></div>
+            <div class="creator-content">
+                <h3>Wadood Alshekh</h3>
+                <div class="gold-line"></div>
+                <p>Syrian filmmaker based in Germany with a passion for visual storytelling. His journey began in Hungary, where he studied film and built a strong visual language rooted in emotion, rhythm, and cinematic precision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Vision Statement -->
+    <section class="vision-section full-screen-section">
+        <div class="vision-content">
+            <h2 class="gold-gradient cinematic-text">Your Vision, Our Lens</h2>
+            <div class="vision-underline"></div>
+            <p class="vision-statement">From aerial perspectives to intimate close-ups, we create visuals that resonate. We’re not just capturing footage—we’re building a vision.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="loader.js"></script>
 </body>
 </html>
