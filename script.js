@@ -53,3 +53,18 @@ window.addEventListener('scroll', () => {
   document.querySelector('.parallax').style.transform = 
     `translate3d(0, ${scrolled * 0.4}px, 0)`;
 });
+// 3D Parallax Motion
+document.addEventListener('scroll', () => {
+  const layers = document.querySelectorAll('.parallax-layer');
+  const scrollY = window.pageYOffset;
+
+  layers.forEach(layer => {
+    const speed = layer.dataset.speed;
+    layer.style.transform = `translate3d(0, ${-scrollY * speed}px, 0)`;
+  });
+});
+
+// Optimize performance
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(() => {});
+});
