@@ -1150,3 +1150,12 @@ html, body {
   font-size: 0.85rem;
   color: #aaaaaa !important;
 }
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  background: #0a0a0a;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
