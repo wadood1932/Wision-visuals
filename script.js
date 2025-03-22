@@ -107,36 +107,19 @@ setTimeout(() => {
   if(preloader) preloader.remove();
 }, 4000);
 // About Page Animations
-const aboutSections = document.querySelectorAll('.slide-in-left, .slide-in-right');
+const animateElements = document.querySelectorAll('.scroll-animate');
 
-const aboutObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             entry.target.classList.add('active');
         }
     });
-}, { threshold: 0.1 });
-
-aboutSections.forEach(section => {
-    aboutObserver.observe(section);
+}, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
 });
-// Initialize all animations  
-document.addEventListener("DOMContentLoaded", () => {  
-  // Section animations  
-  const animateOnScroll = (elements) => {  
-    elements.forEach(element => {  
-      const elementTop = element.getBoundingClientRect().top;  
-      const elementBottom = element.getBoundingClientRect().bottom;  
-      if (elementTop < window.innerHeight && elementBottom >= 0) {  
-        element.classList.add("active");  
-      }  
-    });  
-  };  
 
-  window.addEventListener("scroll", () => {  
-    animateOnScroll(document.querySelectorAll(".slide-in-left, .slide-in-right"));  
-  });  
-
-  // Trigger initial check  
-  animateOnScroll(document.querySelectorAll(".slide-in-left, .slide-in-right"));  
+animateElements.forEach(element => {
+    observer.observe(element);
 });
