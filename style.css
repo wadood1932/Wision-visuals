@@ -1094,3 +1094,17 @@ body {
   clear: both;
   width: 100%;
 }
+html, body {
+  background: #0a0a0a;
+}
+  .site-footer a,
+.site-footer p,
+.site-footer i {
+  all: unset;
+  color: #c5a030;
+  font-family: 'Cinzel', serif;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: white;
+}
