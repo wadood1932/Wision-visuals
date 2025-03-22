@@ -167,3 +167,34 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkVisibility);
   checkVisibility(); // Initial check
 });
+// Portfolio Modal System
+const projects = document.querySelectorAll('.project-card');
+const modal = document.querySelector('.project-modal');
+const closeModal = document.querySelector('.close-modal');
+
+projects.forEach(project => {
+    project.addEventListener('click', () => {
+        const title = project.querySelector('h3').textContent;
+        const type = project.querySelector('p').textContent;
+        const imgSrc = project.querySelector('img').src;
+        
+        modal.querySelector('.modal-media').innerHTML = `<img src="${imgSrc}" alt="${title}">`;
+        modal.querySelector('h2').textContent = title;
+        modal.querySelector('.project-type').textContent = type;
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', (e) => {
+    if(e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
