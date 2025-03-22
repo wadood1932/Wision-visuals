@@ -126,7 +126,7 @@ body {
     40% { transform: translateY(-30px); }
     60% { transform: translateY(-15px); }
 }
-/* ===== GUARANTEED WORKING PRELOADER ===== */
+/* ===== PRELOADER ===== */
 #wision-preloader {
   position: fixed;
   top: 0;
@@ -149,22 +149,29 @@ body {
   border-top-color: #C5A030;
   border-radius: 50%;
   position: absolute;
-  animation: spin 1.5s linear infinite;
+  animation: spin 2s linear infinite;
+  box-shadow: 0 0 20px rgba(197, 160, 48, 0.3);
 }
 
 .text {
-  font-family: 'Arial', sans-serif; /* Fallback font */
-  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
   color: #C5A030;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  animation: spinReverse 3s linear infinite;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(197, 160, 48, 0.5);
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
 }
 /* ===== Page Transitions ===== */
 .page-transition {
