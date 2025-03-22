@@ -1159,3 +1159,76 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+/* === FIXED FOOTER STYLES === */
+.site-footer {
+  background-color: #0a0a0a !important;
+  color: #c5a030 !important;
+  font-family: 'Cinzel', serif !important;
+  padding: 4rem 1rem !important;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.footer-credit {
+  font-size: 0.85rem;
+  color: #aaaaaa !important;
+  margin-top: 2rem;
+}
+
+.site-footer a,
+.site-footer p,
+.site-footer i {
+  color: #c5a030 !important;
+  font-family: 'Cinzel', serif !important;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.site-footer a:hover {
+  color: white !important;
+}
+
+/* iPad + Laptop Fix: layout containment */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .footer-container {
+    flex-wrap: wrap;
+  }
+
+  .footer-logo,
+  .footer-links,
+  .footer-social,
+  .footer-credit {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
