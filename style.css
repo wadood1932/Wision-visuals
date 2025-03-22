@@ -1504,3 +1504,38 @@ body::after {
   /* Add to style.css */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
   
+/* Quantum Field Theory Styling */
+:root {
+  --space-time-curvature: calc(var(--scroll-depth) * 1deg);
+  --photon-speed: cubic-bezier(0.17, 0.67, 0.45, 1.28);
+}
+
+body {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.parallax-layer {
+  transform: 
+    translateZ(calc(var(--depth) * 100px))
+    rotate3d(1, 1, 0, var(--space-time-curvature));
+  transition: transform 0.8s var(--photon-speed);
+}
+
+@keyframes quantum-entanglement {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+.holographic-element {
+  background: linear-gradient(
+    45deg,
+    rgba(197, 160, 48, 0.9),
+    rgba(197, 160, 48, 0.3)
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 48, 0.6);
+  transform-style: preserve-3d;
+  box-shadow: 0 0 50px rgba(197, 160, 48, 0.3);
+}
