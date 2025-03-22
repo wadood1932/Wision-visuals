@@ -126,9 +126,8 @@ body {
     40% { transform: translateY(-30px); }
     60% { transform: translateY(-15px); }
 }
-/* ===== Cinematic Preloader ===== */
-/* ===== New Preloader ===== */
-.preloader-overlay {
+/* ===== GUARANTEED WORKING PRELOADER ===== */
+#wision-preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -143,37 +142,27 @@ body {
   transition: opacity 1s ease;
 }
 
-.preloader-container {
-  position: relative;
+.gold-ring {
   width: 200px;
   height: 200px;
-}
-
-.preloader-gold-border {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 4px solid #C5A030;
+  border: 4px solid transparent;
+  border-top-color: #C5A030;
   border-radius: 50%;
-  animation: rotate 2s linear infinite;
-  box-shadow: 0 0 30px rgba(197, 160, 48, 0.5);
+  position: absolute;
+  animation: spin 1.5s linear infinite;
 }
 
-.preloader-text {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Cinzel', serif;
+.text {
+  font-family: 'Arial', sans-serif; /* Fallback font */
   font-size: 2rem;
   color: #C5A030;
+  position: relative;
+  z-index: 1;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
 
-@keyframes rotate {
+@keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
