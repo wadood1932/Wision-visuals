@@ -107,19 +107,17 @@ setTimeout(() => {
   if(preloader) preloader.remove();
 }, 4000);
 // Scroll Animations
+// Replace observer config in script.js
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
-            entry.target.classList.add('active');
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translate(0)";
         }
     });
 }, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -100px 0px'
-});
-
-document.querySelectorAll('.fade-left, .fade-right, .fade-up').forEach((element) => {
-    observer.observe(element);
+    threshold: 0.1, // More sensitive trigger
+    rootMargin: '0px 0px -50px 0px' // Earlier activation
 });
 
 // Enable smooth scroll snap
