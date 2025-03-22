@@ -120,3 +120,23 @@ const aboutObserver = new IntersectionObserver((entries) => {
 aboutSections.forEach(section => {
     aboutObserver.observe(section);
 });
+// Initialize all animations  
+document.addEventListener("DOMContentLoaded", () => {  
+  // Section animations  
+  const animateOnScroll = (elements) => {  
+    elements.forEach(element => {  
+      const elementTop = element.getBoundingClientRect().top;  
+      const elementBottom = element.getBoundingClientRect().bottom;  
+      if (elementTop < window.innerHeight && elementBottom >= 0) {  
+        element.classList.add("active");  
+      }  
+    });  
+  };  
+
+  window.addEventListener("scroll", () => {  
+    animateOnScroll(document.querySelectorAll(".slide-in-left, .slide-in-right"));  
+  });  
+
+  // Trigger initial check  
+  animateOnScroll(document.querySelectorAll(".slide-in-left, .slide-in-right"));  
+});
