@@ -43,6 +43,7 @@ function navigate(url) {
 // Add event listeners to all navigation links
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', (e) => {
+    if (e.target.href === window.location.href) return; // Fix for same-page links
     e.preventDefault();
     navigate(e.target.href);
   });
