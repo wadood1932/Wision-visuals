@@ -769,3 +769,10 @@ body {
         width: 95%;
     }
 }
+/* Temporary override to keep elements visible */
+.fade-up,
+.fade-left,
+.fade-right {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
