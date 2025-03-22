@@ -1111,3 +1111,37 @@ html {
   transform: translateY(0);
 }
   
+.cinematic-footer {
+  background: #0a0a0a;
+  color: white;
+  padding: 2rem 5%;
+  border-top: 1px solid var(--gold-dim);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
