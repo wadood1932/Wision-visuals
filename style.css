@@ -1369,3 +1369,30 @@ body {
     margin-top: 2rem;
   }
 }
+/* Ensure the footer doesn't get overlapped or hidden */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* Patch to make sure last section leaves space */
+.fullscreen-section:last-of-type {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Floating button fix across all screen sizes */
+.floating-contact {
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+}
