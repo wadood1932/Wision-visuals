@@ -281,3 +281,46 @@ class QuantumLoader {
 }
 
 new QuantumLoader();
+// AI-powered interaction system
+class CineEngine {
+  constructor() {
+    this.initSpatialTracking();
+    this.createHolographicDOM();
+  }
+
+  initSpatialTracking() {
+    document.addEventListener('mousemove', (e) => {
+      this.calculateDepthField(e);
+      this.updateQuantumElements(e);
+    });
+    
+    window.addEventListener('scroll', this.handleRelativisticScroll.bind(this));
+  }
+
+  calculateDepthField(e) {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+    
+    document.documentElement.style.setProperty('--depth-x', x * 20 + 'px');
+    document.documentElement.style.setProperty('--depth-y', y * 20 + 'px');
+  }
+
+  handleRelativisticScroll() {
+    const scrollPower = Math.min(window.scrollY / 1000, 1);
+    document.documentElement.style.setProperty('--space-curve', scrollPower * 15 + 'deg');
+  }
+
+  createHolographicDOM() {
+    document.querySelectorAll('.holographic').forEach(el => {
+      const hologram = document.createElement('div');
+      hologram.className = 'hologram-effect';
+      el.appendChild(hologram);
+    });
+  }
+}
+
+new CineEngine();
+// In script.js
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
