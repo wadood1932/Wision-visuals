@@ -58,9 +58,20 @@ body {
 }
 
 .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
+  display: flex;
+  gap: 2rem; /* Adjust spacing between items */
+  list-style: none;
+  padding-right: 2rem; /* Add padding to the right */
+  margin: 0 auto; /* Center the menu */
+  max-width: 90%; /* Prevent overflow */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem; /* Reduce spacing */
+    padding-right: 1rem; /* Adjust padding */
+  }
 }
 
 .nav-links a {
