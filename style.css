@@ -1097,14 +1097,7 @@ body {
 html, body {
   background: #0a0a0a;
 }
-  .site-footer a,
-.site-footer p,
-.site-footer i {
-  all: unset;
-  color: #c5a030;
-  font-family: 'Cinzel', serif;
-  text-decoration: none;
-}
+ 
 .site-footer a:hover {
   color: white;
 }
@@ -1231,4 +1224,16 @@ html {
     flex: 1 1 100%;
     text-align: center;
   }
+}
+.site-footer a,
+.site-footer p,
+.site-footer i {
+  color: #c5a030;
+  font-family: 'Cinzel', serif;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.site-footer a:hover {
+  color: white;
 }
