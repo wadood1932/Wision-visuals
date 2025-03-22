@@ -1,9 +1,7 @@
 /* ===== Base Styles ===== */
-:root {
-  --gold: #C5A030;  /* Rich, muted gold */
-  --gold-dim: #A88C28; /* Darker gold for accents */
-  --black: #0A0A0A;
-  --dark-gray: #1A1A1A;
+::root {
+  --gold: #C5A030; /* Muted gold (already added earlier) */
+  --gold-dim: #A88C28; /* Even darker for shadows */
 }
 
 body {
