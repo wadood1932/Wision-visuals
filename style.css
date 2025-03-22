@@ -1108,3 +1108,45 @@ html, body {
 .site-footer a:hover {
   color: white;
 }
+.site-footer {
+  background-color: #0a0a0a !important;
+  color: #c5a030 !important;
+  font-family: 'Cinzel', serif !important;
+  padding: 4rem 1rem !important;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.site-footer a,
+.site-footer p,
+.site-footer i {
+  color: #c5a030 !important;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif !important;
+}
+
+.site-footer a:hover {
+  color: white !important;
+}
+
+.footer-logo img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.footer-links,
+.footer-social {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-credit {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #aaaaaa !important;
+}
