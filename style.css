@@ -863,8 +863,8 @@ body {
 }
 
 .gold-ring {
-  width: 180px;
-  height: 180px;
+  width: 230px;
+  height: 230px;
   border: 6px solid #C5A030;
   border-radius: 50%;
   animation: spinRing 2.5s linear infinite;
@@ -909,9 +909,10 @@ body {
 
 /* === Mobile Scaling === */
 @media (max-width: 600px) {
+@media (max-width: 600px) {
   .gold-ring {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-width: 4px;
     margin-bottom: 1.5rem;
   }
