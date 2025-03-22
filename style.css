@@ -591,3 +591,17 @@ body {
         padding: 4rem 1rem;
     }
 }
+/* Add to style.css */
+.text-block, .creator-bio {
+    color: #ffffff !important; /* Force white text */
+    opacity: 0.9 !important;
+}
+
+.content-section {
+    background: #0f0f0f !important; /* Slightly lighter than pure black */
+}
+
+.creator-image-placeholder {
+    background: rgba(200, 160, 48, 0.1) !important; /* Visible placeholder */
+    border: 2px solid #C5A03033 !important; /* Gold border */
+}
