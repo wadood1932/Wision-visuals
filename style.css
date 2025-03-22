@@ -379,3 +379,17 @@ body {
   0%, 100% { opacity: 0; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1); }
 }
+/* Add these lines */
+.video-wrapper,
+.parallax-container {
+  z-index: -2 !important;
+}
+
+.main-nav {
+  z-index: 1000 !important;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
