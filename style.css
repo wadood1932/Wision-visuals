@@ -404,3 +404,12 @@ body {
   50% { transform: rotate(180deg) scale(1.2); }
   100% { transform: rotate(360deg) scale(1); }
 }
+/* Add this */
+.hero-content {
+  position: relative;
+  z-index: 2; /* Higher than parallax/video */
+}
+
+.floating-contact {
+  z-index: 1001; /* Above navigation */
+}
