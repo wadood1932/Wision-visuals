@@ -106,3 +106,17 @@ setTimeout(() => {
   const preloader = document.getElementById('wision-preloader');
   if(preloader) preloader.remove();
 }, 4000);
+// About Page Animations
+const aboutSections = document.querySelectorAll('.slide-in-left, .slide-in-right');
+
+const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1 });
+
+aboutSections.forEach(section => {
+    aboutObserver.observe(section);
+});
