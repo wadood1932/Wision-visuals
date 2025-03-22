@@ -601,7 +601,22 @@ body {
     background: #0f0f0f !important; /* Slightly lighter than pure black */
 }
 
+.creator-section {
+  background: #0f0f0f !important; /* Visible background */
+}
+
 .creator-image-placeholder {
-    background: rgba(200, 160, 48, 0.1) !important; /* Visible placeholder */
-    border: 2px solid #C5A03033 !important; /* Gold border */
+  background: rgba(200, 160, 48, 0.1) !important;
+  border: 2px solid #C5A030 !important; /* Visible gold border */
+  min-height: 400px;
+  opacity: 1 !important; /* Force visibility */
+}
+
+.creator-bio {
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9 !important;
+  padding: 2rem;
 }
