@@ -1221,3 +1221,117 @@ body::after {
   mix-blend-mode: soft-light;
   z-index: 9998;
 }
+/* Quantum-button™ technology */
+.cta-button {
+  position: relative;
+  background: linear-gradient(145deg, 
+    rgba(197, 160, 48, 0.8) 0%, 
+    rgba(197, 160, 48, 0.4) 50%, 
+    rgba(197, 160, 48, 0.8) 100%
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 48, 0.3);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    #c5a030 0%, 
+    transparent 50%, 
+    #c5a030 100%
+  );
+  z-index: -1;
+  animation: hologramFlow 4s linear infinite;
+  filter: blur(10px);
+}
+
+@keyframes hologramFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.cta-button:hover {
+  transform: translateZ(20px) scale(1.08);
+  box-shadow: 0 0 40px rgba(197, 160, 48, 0.4);
+}
+  /* 4D Navigation System */
+.nav-links a {
+  position: relative;
+  padding: 0.8rem 1.2rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(197, 160, 48, 0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.nav-links a:hover {
+  transform: translateZ(10px);
+  color: #fff;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #c5a030 50%, 
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.nav-links a:hover::after {
+  opacity: 1;
+}
+  /* 4D Page Transitions */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  z-index: 9999;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  animation: spacetimeFold 1.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+@keyframes spacetimeFold {
+  0% { 
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    background: #0a0a0a;
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background: #c5a030;
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background: #0a0a0a;
+  }
+}
