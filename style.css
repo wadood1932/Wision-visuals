@@ -847,7 +847,7 @@ body {
     transform: translateY(-100%);
   }
 }
-/* === Cinematic Preloader === */
+/* === Cinematic Preloader v2 === */
 #wision-preloader {
   position: fixed;
   top: 0; left: 0;
@@ -858,21 +858,27 @@ body {
   justify-content: center;
   flex-direction: column;
   z-index: 10000;
-  animation: fadeOutPreloader 1s ease 3s forwards;
+  animation: fadeOutPreloader 1s ease 3.2s forwards;
 }
 
 .gold-ring {
-  width: 120px;
-  height: 120px;
-  border: 5px solid #C5A030;
+  width: 180px;
+  height: 180px;
+  border: 6px solid #C5A030;
   border-radius: 50%;
-  animation: spinRing 2s linear infinite;
-  margin-bottom: 1.5rem;
+  animation: spinRing 2.5s linear infinite;
+  margin-bottom: 2rem;
+}
+
+.preloader-text {
+  display: flex;
+  gap: 0.6rem;
 }
 
 .preloader-text span {
   font-family: 'Cinzel', serif;
-  font-size: 2rem;
+  font-size: 3rem;
+  letter-spacing: 2px;
   color: #C5A030;
   opacity: 0;
   animation: fadeInLetter 1s ease forwards;
@@ -891,10 +897,23 @@ body {
 }
 
 @keyframes fadeInLetter {
-  to { opacity: 1; transform: translateY(0); }
   from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeOutPreloader {
   to { opacity: 0; visibility: hidden; }
+}
+
+/* Mobile scaling */
+@media (max-width: 600px) {
+  .gold-ring {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+  }
+
+  .preloader-text span {
+    font-size: 2rem;
+  }
 }
