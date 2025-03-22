@@ -2,6 +2,7 @@
 :root {
   --gold: #C5A030; /* Muted gold (already added earlier) */
   --gold-dim: #A88C28; /* Even darker for shadows */
+  --heading-font: 'Cinzel', serif;
 }
 
 body {
