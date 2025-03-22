@@ -1024,157 +1024,29 @@ body {
   opacity: 1 !important;
   transform: translate(0, 0) !important;
 }
-/* === Clean Footer Styles === */
+/* === CLEAN FOOTER STYLES (FINAL VERSION) === */
 .site-footer {
-  background: #0a0a0a;
+  background-color: #0a0a0a;
   color: #c5a030;
-  padding: 3rem 1rem;
   font-family: 'Cinzel', serif;
+  padding: 4rem 1rem;
+  text-align: center;
+  z-index: 2;
   position: relative;
-  z-index: 10;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  clear: both;
 }
 
 .footer-container {
   max-width: 1000px;
   margin: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.footer-logo img {
-  height: 60px;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.footer-links a {
-  color: #c5a030;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-}
-
-.footer-social {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.footer-social a {
-  font-size: 1.4rem;
-  color: #c5a030;
-  transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: #ffffff;
-}
-
-.footer-credit {
-  font-size: 0.9rem;
-  color: #aaaaaa;
-}
-.site-footer {
-  position: relative;
-  z-index: 1;
-  clear: both;
-  width: 100%;
-}
-html, body {
-  background: #0a0a0a;
-}
- 
-.site-footer a:hover {
-  color: white;
-}
-.site-footer {
-  background-color: #0a0a0a !important;
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  padding: 4rem 1rem !important;
-  text-align: center;
-  z-index: 2;
-  position: relative;
-}
-
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030 !important;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: 'Cinzel', serif !important;
-}
-
-.site-footer a:hover {
-  color: white !important;
-}
-
-.footer-logo img {
-  height: 60px;
-  margin-bottom: 1rem;
-}
-
-.footer-links,
-.footer-social {
-  margin: 1.5rem 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.footer-credit {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #aaaaaa !important;
-}
-html {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-  background: #0a0a0a;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-/* === FIXED FOOTER STYLES === */
-.site-footer {
-  background-color: #0a0a0a !important;
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  padding: 4rem 1rem !important;
-  text-align: center;
-  z-index: 2;
-  position: relative;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.footer-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
   padding: 0 1rem;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -1194,37 +1066,10 @@ html {
 
 .footer-credit {
   font-size: 0.85rem;
-  color: #aaaaaa !important;
+  color: #aaaaaa;
   margin-top: 2rem;
 }
 
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.site-footer a:hover {
-  color: white !important;
-}
-
-/* iPad + Laptop Fix: layout containment */
-@media (min-width: 768px) and (max-width: 1280px) {
-  .footer-container {
-    flex-wrap: wrap;
-  }
-
-  .footer-logo,
-  .footer-links,
-  .footer-social,
-  .footer-credit {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-}
 .site-footer a,
 .site-footer p,
 .site-footer i {
@@ -1237,48 +1082,11 @@ html {
 .site-footer a:hover {
   color: white;
 }
-/* === Final Footer Fix === */
 
-/* Ensure floating button never covers footer */
-@media (min-width: 768px) {
-  .floating-contact {
-    bottom: 100px; /* Push it further up */
-  }
-}
-
-/* Re-contain footer layout */
-.site-footer {
-  background-color: #0a0a0a !important;
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  padding: 4rem 1rem !important;
-  text-align: center;
-  z-index: 2 !important;
-  position: relative !important;
-  width: 100%;
-  overflow-x: hidden;
-  clear: both;
-}
-
-/* Restore link styles cleanly */
-.site-footer a,
-.site-footer p,
-.site-footer i {
-  color: #c5a030 !important;
-  font-family: 'Cinzel', serif !important;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.site-footer a:hover {
-  color: white !important;
-}
-
-/* Extra safety: wrap layout in stacked format on iPad+ */
+/* Responsive Fix for iPad/Laptops */
 @media (min-width: 768px) and (max-width: 1280px) {
   .footer-container {
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .footer-logo,
