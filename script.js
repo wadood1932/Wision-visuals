@@ -86,10 +86,16 @@ document.getElementById('appointment-form').addEventListener('submit', (e) => {
   e.target.reset();
 });
 // Preloader Logic
+document.body.style.overflow = 'hidden';
+
 window.onload = () => {
   const preloader = document.querySelector('.preloader');
+  
   setTimeout(() => {
     preloader.style.opacity = '0';
-    setTimeout(() => preloader.remove(), 1000);
-  }, 2000); // Adjust time to match video length
+    setTimeout(() => {
+      preloader.remove();
+      document.body.style.overflow = 'auto';
+    }, 1000);
+  }, 2000);
 };
