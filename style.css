@@ -57,23 +57,24 @@ body {
     filter: drop-shadow(0 0 10px var(--gold));
 }
 
+./* ===== Navigation Menu Fix ===== */
 .nav-links {
   display: flex;
-  gap: 2rem; /* Adjust spacing between items */
+  gap: 1.5rem; /* Adjust spacing between items */
   list-style: none;
-  padding-right: 2rem; /* Add padding to the right */
+  padding: 0 2rem; /* Add padding to both sides */
   margin: 0 auto; /* Center the menu */
-  max-width: 90%; /* Prevent overflow */
+  justify-content: flex-start; /* Align items to the left */
+  max-width: 100%; /* Prevent overflow */
 }
 
 /* For smaller screens */
 @media (max-width: 768px) {
   .nav-links {
     gap: 1rem; /* Reduce spacing */
-    padding-right: 1rem; /* Adjust padding */
+    padding: 0 1rem; /* Adjust padding */
   }
 }
-
 .nav-links a {
     color: white;
     text-decoration: none;
