@@ -370,3 +370,12 @@ body {
   color: var(--black);
   font-size: 1.2rem;
 }
+/* Preloader Text Animation */
+.preloader-text {
+  animation: textReveal 2s infinite;
+}
+
+@keyframes textReveal {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
