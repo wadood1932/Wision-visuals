@@ -1,8 +1,10 @@
+/* ===== CINEMATIC CORE ===== */
 :root {
     --gold-primary: #C5A030;
     --gold-secondary: #A88C28;
     --black: #0A0A0A;
 }
+
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -10,6 +12,8 @@ body {
     color: white;
     overflow-x: hidden;
 }
+
+/* Preloader */
 #wision-preloader {
     position: fixed;
     top: 0;
@@ -22,6 +26,7 @@ body {
     align-items: center;
     z-index: 9999;
 }
+
 .gold-ring {
     width: 200px;
     height: 200px;
@@ -29,6 +34,7 @@ body {
     border-radius: 50%;
     animation: rotate 4s linear infinite;
 }
+
 .preloader-text span {
     font-size: 2rem;
     color: var(--gold-primary);
@@ -36,13 +42,17 @@ body {
     opacity: 0;
     animation: fadeInLetter 1s forwards;
 }
+
 @keyframes rotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
 @keyframes fadeInLetter {
     to { opacity: 1; }
 }
+
+/* Navigation */
 .main-nav {
     position: fixed;
     top: 0;
@@ -54,20 +64,25 @@ body {
     background: rgba(10,10,10,0.95);
     z-index: 1000;
 }
+
 .nav-links a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
     color: var(--gold-primary);
 }
+
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .gold-gradient {
     background: linear-gradient(45deg, var(--gold-primary), #ffffff);
     -webkit-background-clip: text;
