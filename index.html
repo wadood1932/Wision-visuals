@@ -10,14 +10,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
  </head>
  <body>
-  <div class="video-wrapper">
-   <video autoplay="" id="hero-video" loop="" muted="" playsinline="">
-    <source src="background.mp4" type="video/mp4"/>
-    Your browser does not support the video tag.
-   </video>
-   <div class="video-overlay">
-   </div>
-  </div>
   <!-- 3D Parallax Container -->
   <div class="parallax-container">
    <!-- Depth Layers -->
@@ -53,6 +45,14 @@
     </span>
    </div>
   </div>
+  <!-- Cinematic Video Background -->
+  <div class="video-wrapper">
+   <video autoplay="" id="hero-video" loop="" muted="">
+    <source src="background.mp4.mp4" type="video/mp4"/>
+   </video>
+   <div class="video-overlay">
+   </div>
+  </div>
   <!-- Main Navigation -->
   <nav class="main-nav">
    <div class="nav-brand">
@@ -60,28 +60,28 @@
    </div>
    <ul class="nav-links">
     <li>
-     <a data-transition="" href="index.html">
+     <a href="index.html">
       <i class="fas fa-home">
       </i>
       Home
      </a>
     </li>
     <li>
-     <a data-transition="" href="services.html">
+     <a href="services.html">
       <i class="fas fa-film">
       </i>
       Services
      </a>
     </li>
     <li>
-     <a data-transition="" href="about.html">
+     <a href="about.html">
       <i class="fas fa-user">
       </i>
       About
      </a>
     </li>
     <li>
-     <a data-transition="" href="appointment.html">
+     <a href="appointment.html">
       <i class="fas fa-calendar-alt">
       </i>
       Book
@@ -89,7 +89,7 @@
     </li>
    </ul>
   </nav>
-  <!-- Modified Hero Section -->
+  <!-- Hero Section -->
   <section class="hero">
    <div class="hero-content">
     <h1 class="gold-gradient">
@@ -103,8 +103,6 @@
      </i>
     </div>
    </div>
-   <div id="webgl-container">
-   </div>
   </section>
   <!-- === About Preview Section === -->
   <section class="content-section fade-up" style="padding: 5rem 2rem; background: #0a0a0a;">
@@ -115,7 +113,7 @@
     <p style="margin-top: 1rem; font-size: 1rem; color: #ccc;">
      Founded by filmmaker Wadood Alshekh, WISION Visuals is built on the pursuit of storytelling that portrais emotions to visuals for hearts to communicate. We don’t just create videos — we create emotional experiences through cinematic language.
     </p>
-    <a class="cta-button" data-transition="" href="about.html" style="margin-top: 2rem;">
+    <a class="cta-button" href="about.html" style="margin-top: 2rem;">
      Read Our Story
     </a>
    </div>
@@ -163,7 +161,7 @@
       </p>
      </div>
     </div>
-    <a class="cta-button" data-transition="" href="services.html" style="margin-top: 2.5rem;">
+    <a class="cta-button" href="services.html" style="margin-top: 2.5rem;">
      View All Services
     </a>
    </div>
@@ -177,31 +175,20 @@
     <p style="margin-top: 1rem; font-size: 1rem; color: #ccc;">
      Let's bring your vision to life with cinematic precision. Whether it's your wedding, a brand story, or a film — we're ready to make it unforgettable.
     </p>
-    <a class="cta-button" data-transition="" href="appointment.html" style="margin-top: 2rem;">
+    <a class="cta-button" href="appointment.html" style="margin-top: 2rem;">
      Book a Consultation
     </a>
    </div>
   </section>
   <!-- Floating Contact Button -->
   <div class="floating-contact">
-   <a data-transition="" href="appointment.html">
+   <a href="appointment.html">
     <i class="fas fa-calendar-alt">
     </i>
    </a>
   </div>
+  <!-- === Footer Section === -->
   <script src="script.js">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
-  </script>
-  <script src="loader.js">
-  </script>
-  <script src="physics.js">
-  </script>
-  <script src="webgl.js">
-  </script>
-  <script src="transitions.js">
   </script>
  </body>
 </html>
