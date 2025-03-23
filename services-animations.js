@@ -11,18 +11,19 @@ gsap.from(".service-card", {
   }
 });
 
-// Unified Click Handler with updated routing
+// Updated Click Handler for root-level pages
 document.querySelectorAll('.service-card, .explore-btn').forEach(element => {
   element.addEventListener('click', function() {
     const card = this.closest('.service-card');
     const service = card ? card.dataset.service : this.dataset.service;
 
-    // Trigger transition
+    const route = service.charAt(0).toUpperCase() + service.slice(1) + ".html";
+
     document.querySelector('.page-transition').classList.add('start');
     new Audio('assets/film-whoosh.mp3').play();
 
     setTimeout(() => {
-      window.location.href = `services/${service}.html`; // Updated path
+      window.location.href = route;
     }, 1000);
   });
 });
