@@ -1082,4 +1082,13 @@ html {
 /* Extra safety: wrap layout in stacked format on iPad+ */
 @media (min-width: 768px) and (max-width: 1280px) {
 
+  /* QUANTUM PARTICLES */
+.quantum-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #C5A030;
+  border-radius: 50%;
+  pointer-events: none;
+}
 }
