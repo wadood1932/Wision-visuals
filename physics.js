@@ -1,14 +1,20 @@
-class PhysicsEngine {
+// Physics-Driven Navigation
+class NavPhysics {
     constructor() {
-        this.initScrollPhysics();
+        this.links = document.querySelectorAll('.nav-links a');
+        this.init();
     }
-    initScrollPhysics() {
-        window.addEventListener('scroll', () => {
-            document.documentElement.style.setProperty(
-                '--scroll-depth',
-                window.scrollY / document.body.scrollHeight
-            );
+
+    init() {
+        this.links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'none';
+            });
         });
     }
 }
-new PhysicsEngine();
+
+new NavPhysics();
