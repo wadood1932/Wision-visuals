@@ -1,26 +1,23 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    initNavigation();
     initScrollReveal();
 });
-function initNavigation() {
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('mouseover', () => {
-            link.style.transform = 'translateY(-3px)';
-        });
-        link.addEventListener('mouseout', () => {
-            link.style.transform = 'translateY(0)';
-        });
-    });
-}
+
 function initScrollReveal() {
-    const sections = document.querySelectorAll('.content-section');
-    window.addEventListener('scroll', () => {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < window.innerHeight * 0.8) {
-                section.style.opacity = '1';
-                section.style.transform = 'translateY(0)';
+    const fadeElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+    if (!fadeElements.length) return;
+
+    const revealOnScroll = () => {
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.9) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             }
         });
-    });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // trigger on load
 }
