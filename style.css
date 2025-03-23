@@ -1238,3 +1238,43 @@ body {
   pointer-events: none;
   z-index: 999999999;
 }
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: rgba(20,20,20,0.9);
+  padding: 2rem;
+  border-left: 4px solid #C5A030;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+.testimonial-quote {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.testimonial-author {
+  color: #C5A030;
+  font-family: 'Cinzel', serif;
+}
+/* Video Fallback System */
+.hero-video img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+/* Ghost Button Variant */
+.cta-button.ghost {
+  background: transparent;
+  border: 2px solid #C5A030;
+  color: #C5A030;
+}
+.cta-button.ghost:hover {
+  background: rgba(197,160,48,0.1);
+}
