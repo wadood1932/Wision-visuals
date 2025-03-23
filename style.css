@@ -1,3 +1,24 @@
+/* TEMPORARY SAFETY LAYER */
+* {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  position: relative !important;
+  width: 100vw !important;
+  left: 0 !important;
+}
+
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 20px !important;
+}
 /* ===== Base Styles ===== */
 :root {
   --gold: #C5A030; /* Muted gold (already added earlier) */
@@ -131,11 +152,12 @@ body {
 }
 
 #webgl-container {
-  grid-column: 1;
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  transform: translateX(-10%);
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
 }
 
 /* Mobile Layout */
