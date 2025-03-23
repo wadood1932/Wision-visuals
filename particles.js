@@ -19,7 +19,9 @@ function init() {
   // GOLD PARTICLE FIELD
   const geometry = new THREE.BufferGeometry();
   const vertices = [];
-  for (let i = 0; i < 10000; i++) {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const particleCount = isMobile ? 2500 : 10000;
+for (let i = 0; i < particleCount; i++) {
     vertices.push(
       Math.random() * 6000 - 3000,
       Math.random() * 6000 - 3000,

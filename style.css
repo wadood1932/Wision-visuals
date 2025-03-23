@@ -1,3 +1,9 @@
+/* GOLDEN RULE - GPU PRIORITY */
+.parallax-layer, #particle-canvas, .service-card {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
 /* ===== Base Styles ===== */
 :root {
   --gold: #C5A030; /* Muted gold (already added earlier) */
@@ -1204,4 +1210,31 @@ html {
 @keyframes hologram {
   0% { transform: rotate(0deg) translate(-50%, -50%); }
   100% { transform: rotate(360deg) translate(-50%, -50%); }
+}
+
+/* === Cinematic Cursor === */
+body {
+  cursor: none !important;
+}
+
+#cinematic-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #C5A03080;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  z-index: 999999999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #C5A03030;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999999;
 }
