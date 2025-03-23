@@ -13,12 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const href = this.getAttribute("href");
 
         // Start the transition
-        transition.classList.add("start");
+        
+      // CINEMATIC TRANSITION
+      transition.classList.add("start");
+      new Audio('assets/film-whoosh.mp3').play(); // Add sound effect
 
-        // Navigate after animation completes
-        setTimeout(() => {
-          window.location.href = href;
-        }, 800); // This must match the CSS animation duration
+      // SYNC WITH VIDEO
+      setTimeout(() => {
+        transition.style.background = "#0A0A0A"; 
+        window.location.href = href;
+      }, 600);
+
+      // FILM GRAIN TIMING
+      setTimeout(() => {
+        transition.style.background = "#C5A030";
+      }, 300);
+     // This must match the CSS animation duration
       });
     });
   }

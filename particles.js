@@ -1,38 +1,68 @@
 
-// THREE.js PARTICLE SYSTEM
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#particle-canvas'), alpha: true });
+// THREE.js ENHANCED SYSTEM
+let camera, scene, renderer, particles;
+let mouseX = 0, mouseY = 0;
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+function init() {
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 3000);
+  camera.position.z = 1000;
 
-// Gold particles
-const geometry = new THREE.BufferGeometry();
-const vertices = [];
-for (let i = 0; i < 5000; i++) {
-  vertices.push(
-    Math.random() * 2000 - 1000,
-    Math.random() * 2000 - 1000,
-    Math.random() * 2000 - 1000
-  );
+  renderer = new THREE.WebGLRenderer({ 
+    canvas: document.querySelector('#particle-canvas'),
+    alpha: true,
+    antialias: true 
+  });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  // GOLD PARTICLE FIELD
+  const geometry = new THREE.BufferGeometry();
+  const vertices = [];
+  for (let i = 0; i < 10000; i++) {
+    vertices.push(
+      Math.random() * 6000 - 3000,
+      Math.random() * 6000 - 3000,
+      Math.random() * 6000 - 3000
+    );
+  }
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+  
+  const material = new THREE.PointsMaterial({
+    size: 3,
+    color: 0xC5A030,
+    transparent: true,
+    opacity: 0.15,
+    blending: THREE.AdditiveBlending
+  });
+
+  particles = new THREE.Points(geometry, material);
+  scene.add(particles);
+
+  // DEVICE ORIENTATION
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX - window.innerWidth/2) * 0.05;
+    mouseY = (e.clientY - window.innerHeight/2) * 0.05;
+  });
+
+  animate();
 }
-geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-
-const material = new THREE.PointsMaterial({
-  size: 2,
-  color: 0xC5A030,
-  transparent: true,
-  opacity: 0.5
-});
-
-const particles = new THREE.Points(geometry, material);
-scene.add(particles);
-camera.position.z = 1000;
 
 function animate() {
   requestAnimationFrame(animate);
-  particles.rotation.x += 0.0001;
-  particles.rotation.y += 0.0001;
+  
+  particles.rotation.x += 0.0001 + mouseY * 0.00002;
+  particles.rotation.y += 0.0001 + mouseX * 0.00002;
+  
+  camera.position.x += (mouseX - camera.position.x) * 0.05;
+  camera.position.y += (-mouseY - camera.position.y) * 0.05;
+  
   renderer.render(scene, camera);
 }
-animate();
+
+init();
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});

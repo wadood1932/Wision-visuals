@@ -35,3 +35,28 @@ gsap.utils.toArray('.fade-up, .fade-left, .fade-right').forEach(section => {
     }
   });
 });
+
+
+// LIGHT LEAK ANIMATIONS
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const scrollDelta = window.scrollY - lastScroll;
+  lastScroll = window.scrollY;
+
+  gsap.to("#light-leaks div", {
+    opacity: Math.min(Math.abs(scrollDelta * 0.02), 0.3),
+    scale: 1 + (Math.abs(scrollDelta) * 0.005),
+    duration: 1.5,
+    ease: "expo.out"
+  });
+});
+
+// RANDOM DRIFT
+gsap.to("#light-leaks div", {
+  duration: 15,
+  x: "random(-30,30)",
+  y: "random(-20,20)",
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});
