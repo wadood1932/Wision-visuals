@@ -1102,3 +1102,38 @@ html {
 .page-transition.start {
   transform: scaleX(1);
 }
+
+/* === Particle Canvas Background === */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  mix-blend-mode: soft-light;
+  opacity: 0.3;
+}
+
+/* === Cinematic Hover Effect on Cards === */
+.service-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.service-card:hover {
+  transform:
+    translateY(-10px)
+    rotateX(5deg)
+    rotateY(2deg)
+    scale(1.05);
+  box-shadow: 0 0 40px rgba(197, 160, 48, 0.3);
+}
+
+.service-card i {
+  transition: all 0.5s ease;
+}
+
+.service-card:hover i {
+  filter: drop-shadow(0 0 15px #C5A030);
+  transform: scale(1.2);
+}
