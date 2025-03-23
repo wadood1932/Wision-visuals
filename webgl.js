@@ -1,26 +1,3 @@
-// Safe WebGL Initializer
-function initWebGL() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.querySelector('.hero').appendChild(renderer.domElement);
-
-    // Basic safety animation
-    function animate() {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-    }
-    animate();
-}
-
-// Conditional load to prevent breaks
-if (typeof THREE !== 'undefined') {
-    initWebGL();
-} else {
-    console.log('WebGL disabled for stability');
-}
 // SAFE WEBGL INTEGRATION
 class HolographicEngine {
   constructor() {
@@ -29,6 +6,7 @@ class HolographicEngine {
     this.initThreeJS();
     this.createHologram();
     this.animate();
+    this.handleResize();
   }
 
   webGLAvailable() {
@@ -44,9 +22,16 @@ class HolographicEngine {
   initThreeJS() {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    this.renderer = new THREE.WebGLRenderer({ 
+      alpha: true, 
+      antialias: true,
+      powerPreference: "high-performance"
+    });
     
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.domElement.style.position = 'absolute';
+    this.renderer.domElement.style.left = '50%';
+    this.renderer.domElement.style.transform = 'translateX(-50%)';
     document.querySelector('.hero').prepend(this.renderer.domElement);
   }
 
@@ -70,6 +55,16 @@ class HolographicEngine {
     this.hologram.rotation.y += 0.006;
     this.renderer.render(this.scene, this.camera);
   }
+
+  handleResize() {
+    window.addEventListener('resize', () => {
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  }
 }
 
-new HolographicEngine();
+if(document.querySelector('.hero')) {
+  new HolographicEngine();
+}
