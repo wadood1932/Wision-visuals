@@ -1,8 +1,6 @@
 /* TEMPORARY SAFETY LAYER */
 * {
-  box-sizing: border-box !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
+  box-sizing: border-box;
 }
 
 body {
@@ -229,8 +227,7 @@ body {
   text-shadow: 0 0 15px rgba(197, 160, 48, 0.5);
 }
 
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
+
   100% { transform: rotate(360deg); }
 }
 
@@ -455,8 +452,7 @@ body {
     rotate 4s linear infinite;
 }
 
-@keyframes rotate {
-  0% { transform: rotate(0deg) scale(1); }
+
   50% { transform: rotate(180deg) scale(1.2); }
   100% { transform: rotate(360deg) scale(1); }
 }
@@ -959,7 +955,6 @@ body {
 
 /* === Mobile Scaling === */
 @media (max-width: 600px) {
-@media (max-width: 600px) {
   .gold-ring {
     width: 150px;
     height: 150px;
@@ -1181,3 +1176,7 @@ html, body {
   white-space: nowrap;
   font-size: clamp(3rem, 5vw, 5rem);
 }
+
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(1); }
