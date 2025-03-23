@@ -1105,3 +1105,7 @@ html {
   z-index: 9999;
   pointer-events: none;
 }
+/* FORCE ENABLE ENHANCEMENTS */
+#wision-preloader { opacity: 1 !important; }
+.nav-links a { transform: none !important; }
+.hero { perspective: 1000px !important; }
