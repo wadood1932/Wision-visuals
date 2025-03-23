@@ -1092,3 +1092,16 @@ html {
   pointer-events: none;
 }
 }
+/* FILMIC TRANSITIONS */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #C5A030;
+  transform: scaleX(0);
+  transform-origin: right;
+  z-index: 9999;
+  pointer-events: none;
+}
