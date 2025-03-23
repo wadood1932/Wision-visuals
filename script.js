@@ -1,23 +1,21 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-    initScrollReveal();
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("a[data-transition]");
+  const transition = document.querySelector(".page-transition");
+
+  if (!transition) return;
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+
+      // Animate transition in
+      transition.classList.add("start");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 800); // Match the duration of the transition animation
+    });
+  });
 });
-
-function initScrollReveal() {
-    const fadeElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-    if (!fadeElements.length) return;
-
-    const revealOnScroll = () => {
-        fadeElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.9) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            }
-        });
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // trigger on load
-}
