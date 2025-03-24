@@ -20,3 +20,4 @@ document.querySelectorAll('.service-card').forEach(card => {
     }, 1000);
   });
 });
+console.log("services-animations.js is loaded");
