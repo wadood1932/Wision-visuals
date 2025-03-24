@@ -1,0 +1,101 @@
+
+/* Cinematic Visual Enhancements */
+.hero-matrix {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(197,160,48,0.1) 0%, rgba(10,10,10,0.9) 100%);
+  mix-blend-mode: overlay;
+}
+.depth-layer {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: repeating-linear-gradient(45deg, transparent 0px, transparent 20px, rgba(197,160,48,0.05) 21px, rgba(197,160,48,0.05) 40px);
+  animation: matrixPan 40s linear infinite;
+}
+@keyframes matrixPan {
+  0% { transform: translate(-25%, -25%); }
+  100% { transform: translate(25%, 25%); }
+}
+.holo-tabs {
+  position: relative;
+  overflow: hidden;
+}
+.tab-rail {
+  height: 3px;
+  background: rgba(197,160,48,0.2);
+  margin-bottom: -3px;
+}
+.energy-pulse {
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #C5A030, transparent);
+  animation: pulseScan 3s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+@keyframes pulseScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+.cine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  perspective: 1000px;
+}
+.frame {
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.frame:hover {
+  transform: rotateY(5deg) translateZ(20px);
+}
+.hdr-overlay {
+  background: radial-gradient(circle at var(--x) var(--y), rgba(197,160,48,0.3) 0%, transparent 70%);
+  mix-blend-mode: color-dodge;
+}
+.hologram-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(197,160,48,0.3);
+}
+.holo-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background:
+    repeating-linear-gradient(90deg, transparent 0px, transparent 19px, rgba(197,160,48,0.1) 20px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 19px, rgba(197,160,48,0.1) 20px);
+  animation: holoDrift 40s linear infinite;
+  mix-blend-mode: overlay;
+}
+@keyframes holoDrift {
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(0%, 0%); }
+}
+.credit-roll {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.credit-track {
+  animation: creditScroll 40s linear infinite;
+}
+@keyframes creditScroll {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+@media (max-width: 768px) {
+  .hero-matrix, .holo-grid {
+    display: none;
+  }
+  .cine-grid {
+    grid-template-columns: 1fr;
+    perspective: none;
+  }
+  .credit-roll {
+    height: 300px;
+    animation-duration: 60s;
+  }
+}
