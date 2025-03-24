@@ -1,134 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Services | WISION Visuals</title>
+  <title>
+   Services | WISION Visuals
+  </title>
   <link href="style.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="services-particles.js"></script>
-</head>
-<body>
+ </head>
+ <body>
   <!-- Page Transition Overlay -->
-  <div class="page-transition"></div>
-  
-  <!-- 3D Particle Background -->
-  <canvas id="service-canvas"></canvas>
-
-  <!-- Main Navigation -->
+<div class="page-transition"></div>
+  <!-- Navigation -->
   <nav class="main-nav">
-    <div class="nav-brand">
-      <img alt="WISION Logo" class="logo" src="assets/logo.png"/>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="services.html" class="active"><i class="fas fa-film"></i> Services</a></li>
-      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="appointment.html"><i class="fas fa-calendar-alt"></i> Book</a></li>
-    </ul>
+   <div class="nav-brand">
+    <img alt="WISION Logo" class="logo" src="logo.png"/>
+   </div>
+   <ul class="nav-links">
+    <li>
+     <a href="index.html">
+      <i class="fas fa-home">
+      </i>
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="services.html">
+      <i class="fas fa-film">
+      </i>
+      Services
+     </a>
+    </li>
+    <li>
+     <a href="about.html">
+      <i class="fas fa-user">
+      </i>
+      About
+     </a>
+    </li>
+    <li>
+     <a href="appointment.html">
+      <i class="fas fa-calendar-alt">
+      </i>
+      Book
+     </a>
+    </li>
+   </ul>
   </nav>
-
-  <!-- Hero Section (Preserved Original Structure) -->
+  <!-- Hero Section -->
   <section class="fullscreen-section portfolio-hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="gold-gradient">Our Services</h1>
-      <p class="subtitle">Crafting visual stories across formats and moments</p>
-      <div class="scroll-indicator">
-        <i class="fas fa-chevron-down"></i>
-      </div>
+   <div class="hero-overlay">
+   </div>
+   <div class="hero-content">
+    <h1 class="gold-gradient">
+     Our Services
+    </h1>
+    <p class="subtitle">
+     Crafting visual stories across formats and moments
+    </p>
+    <div class="scroll-indicator">
+     <i class="fas fa-chevron-down">
+     </i>
     </div>
+   </div>
   </section>
-
-  <!-- Updated Services Grid Section -->
+  <!-- Services Section -->
   <section class="content-section" style="background:#0a0a0a; padding: 5rem 2rem;">
-    <div class="grid-container">
-      <!-- Wedding Cinematography -->
-      <div class="service-card" data-file="weddings.html">
-        <div class="card-inner">
-          <div class="card-front">
-            <i class="fas fa-heart"></i>
-            <h3>Weddings</h3>
-          </div>
-          <div class="card-back">
-            <p>Emotive and timeless wedding films capturing your special day with cinematic flair.</p>
-            <button class="cta-button explore-btn">Book Consultation</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Commercial Productions -->
-      <div class="service-card" data-file="commercial.html">
-        <div class="card-inner">
-          <div class="card-front">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Commercials</h3>
-          </div>
-          <div class="card-back">
-            <p>Impactful brand visuals tailored to elevate your marketing and storytelling.</p>
-            <button class="cta-button explore-btn">Book Consultation</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Short Films -->
-      <div class="service-card" data-file="shortFilms.html">
-        <div class="card-inner">
-          <div class="card-front">
-            <i class="fas fa-video"></i>
-            <h3>Short Films</h3>
-          </div>
-          <div class="card-back">
-            <p>Artistic narratives brought to life through compelling visuals and sound design.</p>
-            <button class="cta-button explore-btn">Book Consultation</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Social Media Content -->
-      <div class="service-card" data-file="social.html">
-        <div class="card-inner">
-          <div class="card-front">
-            <i class="fas fa-mobile-alt"></i>
-            <h3>Social Media</h3>
-          </div>
-          <div class="card-back">
-            <p>High-engagement vertical and short-form content for modern platforms.</p>
-            <button class="cta-button explore-btn">Book Consultation</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Automotive Films -->
-      <div class="service-card" data-file="car.html">
-        <div class="card-inner">
-          <div class="card-front">
-            <i class="fas fa-car"></i>
-            <h3>Car Videos</h3>
-          </div>
-          <div class="card-back">
-            <p>High-adrenaline, visually dynamic edits for vehicles and automotive brands.</p>
-            <button class="cta-button explore-btn">Book Consultation</button>
-          </div>
-        </div>
-      </div>
+   <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
+    <div class="creator-photo">
+     <img alt="Weddings" src="wedding.jpg"/>
     </div>
+    <div class="creator-bio" style="padding: 2rem;">
+     <h2 class="gold-heading">
+      Weddings
+     </h2>
+     <p>
+      Emotive and timeless wedding films capturing your special day with cinematic flair.
+     </p>
+     <a class="cta-button" href="appointment.html" style="margin-top: 1rem;">
+      Book Consultation
+     </a>
+    </div>
+   </div>
+   <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
+    <div class="creator-photo" style="order:1;">
+     <img alt="Commercials" src="commercial.jpg"/>
+    </div>
+    <div class="creator-bio" style="padding: 2rem;">
+     <h2 class="gold-heading">
+      Commercials
+     </h2>
+     <p>
+      Impactful brand visuals tailored to elevate your marketing and storytelling.
+     </p>
+     <a class="cta-button" href="appointment.html" style="margin-top: 1rem;">
+      Book Consultation
+     </a>
+    </div>
+   </div>
+   <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
+    <div class="creator-photo">
+     <img alt="Short Films" src="shortfilm.jpg"/>
+    </div>
+    <div class="creator-bio" style="padding: 2rem;">
+     <h2 class="gold-heading">
+      Short Films
+     </h2>
+     <p>
+      Artistic narratives brought to life through compelling visuals and sound design.
+     </p>
+     <a class="cta-button" href="appointment.html" style="margin-top: 1rem;">
+      Book Consultation
+     </a>
+    </div>
+   </div>
+   <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
+    <div class="creator-photo" style="order:1;">
+     <img alt="Social Media Content" src="socialmedia.jpg"/>
+    </div>
+    <div class="creator-bio" style="padding: 2rem;">
+     <h2 class="gold-heading">
+      Social Media Content
+     </h2>
+     <p>
+      High-engagement vertical and short-form content for modern platforms.
+     </p>
+     <a class="cta-button" href="appointment.html" style="margin-top: 1rem;">
+      Book Consultation
+     </a>
+    </div>
+   </div>
+   <div class="creator-grid fade-up" style="align-items:center; margin-bottom: 4rem;">
+    <div class="creator-photo">
+     <img alt="Car Videos" src="car.jpg"/>
+    </div>
+    <div class="creator-bio" style="padding: 2rem;">
+     <h2 class="gold-heading">
+      Car Videos
+     </h2>
+     <p>
+      High-adrenaline, visually dynamic edits for vehicles and automotive brands.
+     </p>
+     <a class="cta-button" href="appointment.html" style="margin-top: 1rem;">
+      Book Consultation
+     </a>
+    </div>
+   </div>
   </section>
-
-  <!-- Preserved FontAwesome Loading -->
+  <!-- Load FontAwesome (icons) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-
-  <!-- Animation Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
-  <!-- Scripts (Preserved Original References) -->
-  <script src="script.js"></script>
-  <script src="audio.js"></script>
-  <script src="cursor.js"></script>
-  
-  <!-- Service Animations Logic -->
-  <script src="services-animations.js"></script>
+  <!-- === Footer Section === -->
+  <script src="script.js">
+  </script>
+ <script src="audio.js"></script>
+<script src="cursor.js"></script>
 </body>
 </html>
