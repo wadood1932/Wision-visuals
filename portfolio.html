@@ -1,0 +1,68 @@
+<!-- portfolio.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wision Visuals - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation (reuse from index.html) -->
+    <nav class="main-nav">...</nav>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="hero-content">
+            <h1 class="scroll-reveal">Our Cinematic World</h1>
+            <p class="subtext scroll-reveal">Each frame tells a story.</p>
+        </div>
+    </section>
+
+    <!-- Project Filters -->
+    <div class="portfolio-filters scroll-reveal">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="weddings">Weddings</button>
+        <button data-filter="commercials">Commercials</button>
+        <button data-filter="short-films">Short Films</button>
+        <button data-filter="cars">Cars</button>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="portfolio-grid">
+        <!-- Example Project Item -->
+        <div class="project-item" data-category="weddings">
+            <div class="project-thumbnail">
+                <video class="lazy" muted loop playsinline data-src="assets/projects/wedding-cover.mp4"></video>
+                <div class="project-info">
+                    <h3>Eternal Vows</h3>
+                    <p>Wedding Film</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more project items -->
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container"></div>
+            <div class="project-description"></div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="portfolio-cta scroll-reveal">
+        <h2>Have a vision? Let's bring it to life.</h2>
+        <a href="appointment.html" class="cta-button">Book Now</a>
+    </section>
+
+    <!-- Footer (reuse from index.html) -->
+    <footer class="main-footer">...</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>
